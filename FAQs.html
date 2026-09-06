@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="FAQs.css">
+</head>
+<body>
+    <h1>Frequently Asked Questions </h1>
+    <div class="FaqMid">
+            <div class="faqItem">
+                <h3>How do I book a taxi? <span>+</span></h3>
+                <p>Online or all our customer support team to receive a confirmation instantly</p>
+            </div>
+
+            <div class="faqItem">
+                <h3>What areas do you cover in Leicester?<span>+</span></h3>
+                <p>Leicester and major UK airports, seaports, and long-distance destinations.</p>
+            </div>
+
+            <div class="faqItem">
+                <h3>Can I pre-book a cab?<span>+</span></h3>
+                <p>Yes, advance bookings ensure availability with punctual pickups.</p>
+            </div>
+
+            <div class="faqItem">
+                <h3>How can I track my taxi?<span>+</span></h3>
+                <p>GPS tracking available on all rides.</p>
+            </div>
+    </div>
+    <script>
+        let allQuetion = document.querySelectorAll(".faqItem h3")
+
+        allQuetion.forEach((item,index)=>{
+                item.addEventListener("click",()=>{
+
+                 allQuetion.forEach((heading,i)=> {
+                        if(index!=i){
+                        heading.lastElementChild.innerHTML="+"
+                        heading.nextElementSibling.classList.remove("showAns")
+                    }
+                })
+                    
+                // Current Quetion click + / -
+                    if(item.lastElementChild.innerHTML=="+"){
+                        item.lastElementChild.innerHTML="-"
+                    }
+                   else{
+                        item.lastElementChild.innerHTML="+"
+                   }
+                   // Current Quetion Ans show / hide
+                    item.nextElementSibling.classList.toggle("showAns")
+                })
+        })
+    </script>
+</body>
+</html>
